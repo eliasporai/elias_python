@@ -9,41 +9,63 @@ print("2 - Cadastrar alunos")
 print("3 - Realizar emprestimo")
 print("4 - Sair")
 
-opcao = int(input("escolha uma opção: "))
-
+opcao = int(input("Escolha uma opção: "))
 if opcao == 1:
     qtd = int(input("\nQuantos livros deseja cadastrar? "))
     for i in range(1, qtd +1):
-        print(f"--- LIVRO{i}---")
+        print(f"\n--- LIVRO {i}---")
         codigo = input("Código do livro: ")
         titulo = input("titulo do livro: ")
         autor = input("Nome do autor: ")
         ano = input("Ano de publicação: ")
         quantidade = int(input("Quantidade disponível: "))
 
-        if titulo == "" or autor == "" or ano == "" or quantidade <=0:
-            print("Dados inválidos")
-        else: 
-            print("LIVRO CADASTRADO COM SUCESSO!")
+        if codigo == "" :
+                print("Erro: O código está vazio.")
+        elif titulo == "":
+                print("Erro: O título está vazio.")
+        elif autor == "":
+                print("Erro: O autor está vazio.")
+        elif ano <= 0:
+                print("Erro: O ano informado é inválido.")
+        elif quantidade <= 0:
+                print("Erro: A quantidade disponível deve ser maior que zero.")
+        else:
+                print("Livro cadastrado com sucesso!")
 
 elif opcao == 2:
     qtd = int(input("\nQuantos alunos deseja cadastrar? "))
-    for i in range(2, qtd +2):
-        print(f"--- ALUNO{i}---")
+    for i in range(1, qtd +1):
+        print(f"\n--- ALUNO {i} ---")
         matricula = int(input("Matrícula: "))
         nome = input("Nome: ")
         turma = input("Turma: ")
 
-        print("ALUNO CADASTRADO COM SUCESSO!")
+        if matricula == "" :
+                print("Erro: Matricula está vazia.")
+        elif nome == "":
+                print("Erro: O nome está vazio.")
+        elif turma == "":
+                print("Erro: turma está vazia.")
+        
+        else:
+                print("ALUNO CADASTRADO COM SUCESSO!")
 
 elif opcao == 3:
     
-    print("=== EMPRESTIMO ===")
+    print("\n=== EMPRESTIMO ===")
     codigo = input("Digite o código do livro: ")
     matricula = input("digite a Matrícula do aluno: ") 
     qtd = int(input("Quantidade dispónível? "))
-
-    print("Emprestimo realizado com Sucesso, boa leitura!")      
+   
+    if codigo == "" or matricula == "":
+                print("Erro: Dados inválidos.")
+    elif qtd <=0: 
+                print("\nNão é possível realizar o empréstimo.")
+                print( "Não há exemplares disponíveis.")
+    else:
+                print("EMPRESTIMO REALIZADO COM SUCESSO!")
+      
 elif opcao == 4:
     print("\nSaindo do sistema... Até logo!")
 
