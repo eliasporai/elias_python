@@ -1,11 +1,24 @@
 #função
 
+#ef saudacao():
+#   print("Estude Python")
 
+#Chamando a função
+#cls
+# acao()
 
-def somar(n1, n2):
-    resultado = n1 + n2
-    print(f"a soma {n1} e {n2} é {resultado}")
-    
-    print (resultado)
+#outra foema de fazer a mesma ação:
+#declarando uma função que irá receber um parametro nomeado
 
-somar(9, 40)
+#ef saudacao_com_parametro(recebe_mensagem):
+#   print(recebe_mensagem)
+#
+#
+#   def multiplicar_por_7:
+
+def verificar_estoque(quantidade):
+    if quantidade > 0:
+        return "Disponível"
+    return "Indisponível"
+situacao = verificar_estoque(0)
+print(situacao)
